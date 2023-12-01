@@ -1,108 +1,29 @@
-.page {
-    padding: 190px;
-    text-align: center;
-    margin: 0;
-    font-size: 30px;
-}
-
-button {
-    width: 100px;
-    height: 30px;
-    color: blue;
-    background: greenyellow;
-}
-
-button:hover {
-    background: rgb(9, 211, 2);
-}
-
-html,
-body {
-    height: 100%;
+* {
     margin: 0;
     padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-#loader {
+.sec {
+    position: relative;
+    background: #111;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.star {
     position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
+    color: #222;
 }
 
-#splash {
-    background: greenyellow;
-    background-repeat: repeat-y;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: splash 2.5s ease-in;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
+.star::before {
+    content: '\f004';
+    font-family: fontAwesome;
 }
 
-#loader::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    margin-left: -8px;
-    bottom: -170px;
-    width: 3px;
-    height: 200px;
-    background: #fff;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-}
-
-#loader::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    margin-left: 8px;
-    bottom: -190px;
-    width: 3px;
-    height: 200px;
-    background: #000;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, 0) 100%);
-}
-
-#splash .anim {
-    width: 100px;
-    height: 100%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, 100%);
-    animation: loader 3s linear;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
-}
-
-@keyframes loader {
-    0% {
-        transform: translate(-50%, 110%);
-    }
-
-    30% {
-        transform: translate(-50%, 50%);
-    }
-
-    100% {
-        transform: translate(-50%, 0%);
-    }
-}
-
-@keyframes splash {
-    0% {
-        transform: translate(0%, 0%);
-    }
-
-    50% {
-        transform: translate(0%, 0%);
-    }
-
-    100% {
-        transform: translate(0%, -190%);
-    }
+.star.animate {
+    color: #0f0;
+    text-shadow: 0 0 5px rgb(43, 0, 255),
+        0 0 20px #0f0,
+        0 0 50px #0f0;
 }
